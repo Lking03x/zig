@@ -56,6 +56,7 @@ pub fn build(b: *std.Build) void {
 
     libfoo.installConfigHeader(b.addConfigHeader(.{
         .style = .blank,
+        .custom_header_text = "/* " ++ std.Build.Step.ConfigHeader.default_header_text ++ " */\n",
         .include_path = "foo/config.h",
     }, .{
         .FOO_CONFIG_1 = "1",
